@@ -3,7 +3,8 @@
   "module": "app.ts",
   "type": "module",
   "scripts": {
-    "start": "bun run --preload ./instrumentation.ts  ./app.ts"
+    "start": "bun run --preload ./instrumentation.ts  ./app.ts",
+    "start:cjs": "node --require ./instrumentation.cjs  ./app.cjs"
   },
   "devDependencies": {
     "@types/bun": "latest"
