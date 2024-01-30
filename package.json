@@ -2,10 +2,20 @@
   "name": "otel-auto-bun-repro",
   "module": "app.ts",
   "type": "module",
+  "scripts": {
+    "start": "bun run --preload ./instrumentation.ts  ./app.ts"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@opentelemetry/auto-instrumentations-node": "^0.41.0",
+    "@opentelemetry/sdk-metrics": "^1.21.0",
+    "@opentelemetry/sdk-node": "^0.48.0",
+    "@opentelemetry/sdk-trace-node": "^1.21.0",
+    "express": "^4.18.2"
   }
 }
