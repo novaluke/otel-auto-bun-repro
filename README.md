@@ -1,15 +1,19 @@
-# otel-auto-fastify-repro
+# OpenTelemetry issues in Bun
 
-To install dependencies:
+To test OpenTelemetry auto-instrumentation in Bun:
 
 ```bash
 bun install
+bun run start
+curl localhost:8080/rolldice
 ```
 
-To run:
+Compare the output with auto-instrumentation in NodeJS:
 
 ```bash
-bun run app.ts
+bun run start:cjs # OR start:mjs
+curl localhost:8080/rolldice
 ```
 
-This project was created using `bun init` in bun v1.0.23. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+Running via Bun produces a single span for `GET`, whereas running via NodeJS
+produces sub-spans for the express functions and middleware.
