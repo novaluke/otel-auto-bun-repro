@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "start": "bun run --preload ./instrumentation.ts  ./app.ts",
-    "start:cjs": "node --require ./instrumentation.cjs  ./app.cjs"
+    "start:cjs": "node --require ./instrumentation.cjs  ./app.cjs",
+    "start:mjs": "node --loader=@opentelemetry/instrumentation/hook.mjs --import=./instrumentation.mjs ./app.mjs"
   },
   "devDependencies": {
     "@types/bun": "latest"
